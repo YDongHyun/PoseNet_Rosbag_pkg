@@ -5,6 +5,6 @@
 ![image](https://user-images.githubusercontent.com/80799025/186364054-0714ec98-9f2f-4635-85f4-41b79c0889fc.png)
 
 - rviz를 이용한 bag 파일 시각화\
-<blog참조 : https://bigbigpark.tistory.com/36>
+< blog참조 : https://bigbigpark.tistory.com/36 >
 
 ![Peek 2022-08-24 21-57](https://user-images.githubusercontent.com/80799025/186424296-cda031fd-3b6c-4335-b3f3-1421c8ec850c.gif)
