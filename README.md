@@ -10,3 +10,6 @@
 ![Peek 2022-08-24 21-57](https://user-images.githubusercontent.com/80799025/186424296-cda031fd-3b6c-4335-b3f3-1421c8ec850c.gif)
 
 - Ladar값을 받아오는 node 작성
+
+- Ground Truth metadata를 얻기위해 Lego_LOAM 및 gstam 설치
+ < https://github.com/RobustFieldAutonomyLab/LeGO-LOAM >
