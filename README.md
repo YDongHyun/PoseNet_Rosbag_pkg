@@ -13,3 +13,17 @@
 
 - Ground Truth metadata를 얻기위해 Lego_LOAM 및 gstam 설치
  < https://github.com/RobustFieldAutonomyLab/LeGO-LOAM >
+
+## Lego_LOAM 빌드 오류
+
+다음 블로그 참조 < https://xiaotaoguo.com/p/lego-loam-setup-ubuntu20/ >
+- pcl 파일 eigen::index를 int로 수정
+- utiliy.h 파일에서 opencv2 수정 및 unit16_6 -> std::uint16_t로 수정
+- Cmake_list파일에 boost관련 추가
+
+
+```
+find_package(Boost REQUIRED COMPONENTS thread)
+find_package(Boost REQUIRED COMPONENTS serialization)
+find_package(Boost REQUIRED COMPONENTS timer)
+```
