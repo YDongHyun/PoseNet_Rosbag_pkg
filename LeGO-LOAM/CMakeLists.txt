@@ -63,3 +63,6 @@ target_link_libraries(mapOptmization ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${Open
 
 add_executable(transformFusion src/transformFusion.cpp)
 target_link_libraries(transformFusion ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OpenCV_LIBRARIES})
+
+add_executable(sixdof_sub src/sixdof_sub.cpp)
+target_link_libraries(sixdof_sub ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OpenCV_LIBRARIES})

@@ -302,11 +302,11 @@ public:
         kdtreeCornerLast.reset(new pcl::KdTreeFLANN<PointType>());
         kdtreeSurfLast.reset(new pcl::KdTreeFLANN<PointType>());
 
-        laserOdometry.header.frame_id = "/camera_init";
-        laserOdometry.child_frame_id = "/laser_odom";
+        laserOdometry.header.frame_id = "camera_init";
+        laserOdometry.child_frame_id = "laser_odom";
 
-        laserOdometryTrans.frame_id_ = "/camera_init";
-        laserOdometryTrans.child_frame_id_ = "/laser_odom";
+        laserOdometryTrans.frame_id_ = "camera_init";
+        laserOdometryTrans.child_frame_id_ = "laser_odom";
         
         isDegenerate = false;
         matP = cv::Mat(6, 6, CV_32F, cv::Scalar::all(0));
@@ -790,28 +790,28 @@ public:
 	    if (pubCornerPointsSharp.getNumSubscribers() != 0){
 	        pcl::toROSMsg(*cornerPointsSharp, laserCloudOutMsg);
 	        laserCloudOutMsg.header.stamp = cloudHeader.stamp;
-	        laserCloudOutMsg.header.frame_id = "/camera";
+	        laserCloudOutMsg.header.frame_id = "camera";
 	        pubCornerPointsSharp.publish(laserCloudOutMsg);
 	    }
 
 	    if (pubCornerPointsLessSharp.getNumSubscribers() != 0){
 	        pcl::toROSMsg(*cornerPointsLessSharp, laserCloudOutMsg);
 	        laserCloudOutMsg.header.stamp = cloudHeader.stamp;
-	        laserCloudOutMsg.header.frame_id = "/camera";
+	        laserCloudOutMsg.header.frame_id = "camera";
 	        pubCornerPointsLessSharp.publish(laserCloudOutMsg);
 	    }
 
 	    if (pubSurfPointsFlat.getNumSubscribers() != 0){
 	        pcl::toROSMsg(*surfPointsFlat, laserCloudOutMsg);
 	        laserCloudOutMsg.header.stamp = cloudHeader.stamp;
-	        laserCloudOutMsg.header.frame_id = "/camera";
+	        laserCloudOutMsg.header.frame_id = "camera";
 	        pubSurfPointsFlat.publish(laserCloudOutMsg);
 	    }
 
 	    if (pubSurfPointsLessFlat.getNumSubscribers() != 0){
 	        pcl::toROSMsg(*surfPointsLessFlat, laserCloudOutMsg);
 	        laserCloudOutMsg.header.stamp = cloudHeader.stamp;
-	        laserCloudOutMsg.header.frame_id = "/camera";
+	        laserCloudOutMsg.header.frame_id = "camera";
 	        pubSurfPointsLessFlat.publish(laserCloudOutMsg);
 	    }
     }
