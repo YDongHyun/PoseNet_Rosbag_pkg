@@ -35,3 +35,7 @@ find_package(Boost REQUIRED COMPONENTS timer)
 
 - LeGo_LOAM의 rqt graph
 ![image](https://user-images.githubusercontent.com/80799025/186645810-0c39abb9-1a26-4882-a16a-527eea9285f1.png)
+
+
+- sixdof_sub 노드 제작
+- LeGo_LOAM에서 6 dof값을 받아오는 노드
