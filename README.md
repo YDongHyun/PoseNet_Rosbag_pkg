@@ -28,7 +28,7 @@ find_package(Boost REQUIRED COMPONENTS serialization)
 find_package(Boost REQUIRED COMPONENTS timer)
 ```
 
-- LeGO_LOAM cpp파일중, frame_id관련 코드의 /를 지워 오류 해결
+- LeGO_LOAM cpp파일중, frame_id관련 코드의 / 를 지워 오류 해결
 
-- 최종적으로 LeGO_LOAM
+- 최종적으로 LeGO_LOAM 실행
 ![image](https://user-images.githubusercontent.com/80799025/186603344-bcb7c2d0-6796-40be-979a-b16c2d096ef1.png)
