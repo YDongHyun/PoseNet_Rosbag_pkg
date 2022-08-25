@@ -32,3 +32,6 @@ find_package(Boost REQUIRED COMPONENTS timer)
 
 - 최종적으로 LeGO_LOAM 실행
 ![image](https://user-images.githubusercontent.com/80799025/186603344-bcb7c2d0-6796-40be-979a-b16c2d096ef1.png)
+
+- LeGo_LOAM의 rqt graph
+![image](https://user-images.githubusercontent.com/80799025/186645810-0c39abb9-1a26-4882-a16a-527eea9285f1.png)
