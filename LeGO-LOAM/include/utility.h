@@ -10,7 +10,8 @@
 
 #include "cloud_msgs/cloud_info.h"
 
-#include <opencv/cv.h>
+#include <opencv2/opencv.hpp>
+//#include <opencv/cv.h>
 
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
@@ -154,14 +155,14 @@ struct PointXYZIR
 {
     PCL_ADD_POINT4D
     PCL_ADD_INTENSITY;
-    uint16_t ring;
+    std::uint16_t ring;
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
 
 POINT_CLOUD_REGISTER_POINT_STRUCT (PointXYZIR,  
                                    (float, x, x) (float, y, y)
                                    (float, z, z) (float, intensity, intensity)
-                                   (uint16_t, ring, ring)
+                                   (std::uint16_t, ring, ring)
 )
 
 /*
