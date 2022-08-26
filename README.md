@@ -40,4 +40,13 @@ find_package(Boost REQUIRED COMPONENTS timer)
 - sixdof_sub 노드 제작
 - LeGo_LOAM에서 6 dof값을 받아오는 노드
 ![image](https://user-images.githubusercontent.com/80799025/186845576-128216d7-8749-4abb-a73a-663afed57cdc.png)
-- 결과들을 train.txt로 저장하도록 노드 수정
+- 결과들을 train.txt로 저장하도록 노드 수정 
+- datasetmaker로 수정
+
+## datasetmaekr.cpp
+- PoseNet을 위한 Dataset을 만드는 Node
+- Lego_LOAM을 통해 6 dof값을 train.txt파일에 저장하고, Compressed Image를 받아와 변환하여 저장하는 노드
+- 아래 커맨드로 bag파일 실행시 생성
+```
+rosbag play train.bag --clock --topic /zed/left/image_rect_color/compressed /imu/data /velodyne_points
+```
