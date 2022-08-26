@@ -39,3 +39,5 @@ find_package(Boost REQUIRED COMPONENTS timer)
 
 - sixdof_sub 노드 제작
 - LeGo_LOAM에서 6 dof값을 받아오는 노드
+![image](https://user-images.githubusercontent.com/80799025/186845576-128216d7-8749-4abb-a73a-663afed57cdc.png)
+
