@@ -1,5 +1,8 @@
 #include "utility.h"
 #include <fstream>
+#include <sensor_msgs/CompressedImage.h>
+#include <cv_bridge/cv_bridge.h>
+
 float sixdof[7];
 std::ofstream fout;
 
@@ -20,11 +23,18 @@ void sixdof_sub(const nav_msgs::Odometry::ConstPtr& laserOdometry2){
   //printf("x=%f, y=%f, z=%f, w=%f, p=%f, q=%f, r=%f \n",sixdof[0],sixdof[1],sixdof[2],sixdof[3],sixdof[4],sixdof[5],sixdof[6]);
 }
 
+void Image_sub(const sensor_msgs::CompressedImage::ConstPtr& CompressedImage){
+  cv_bridge::CvImagePtr cvImg = cv_bridge::toCvCopy(CompressedImage, "bgr8");
+  cv::Mat myOpenCVImg = cvImg->image;
+  cv::imwrite("test.png", myOpenCVImg);
+}
+
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "listener");
   ros::NodeHandle n;
-  ros::Subscriber sub = n.subscribe("/integrated_to_init", 1000, sixdof_sub);
+  ros::Subscriber sub_image = n.subscribe("/zed/left/image_rect_color/compressed", 1000, Image_sub);
+  ros::Subscriber sub_sixdof = n.subscribe("/integrated_to_init", 1000, sixdof_sub);
   ros::spin();
 
   return 0;
