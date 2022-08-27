@@ -32,7 +32,7 @@ void Sixdof_sub(const nav_msgs::Odometry::ConstPtr& laserOdometry2){
   ofstream fout("train.txt",std::ios_base::out|std::ios_base::app);
   fout << fixed;
   fout.precision(6);
-  fout<<"seq/frame"<<global_zeros<<global_cnt<<" "<<sixdof[0]<<" "<<sixdof[1]<<" "<<sixdof[2]<<" "<<sixdof[3]<<" "<<sixdof[4]<<" "<<sixdof[5]<<" "<<sixdof[6]<<endl; 
+  fout<<"seq/frame"<<global_zeros<<global_cnt<<".png "<<sixdof[0]<<" "<<sixdof[1]<<" "<<sixdof[2]<<" "<<sixdof[3]<<" "<<sixdof[4]<<" "<<sixdof[5]<<" "<<sixdof[6]<<endl; 
   fout.close();
   //printf("x=%f, y=%f, z=%f, w=%f, p=%f, q=%f, r=%f \n",sixdof[0],sixdof[1],sixdof[2],sixdof[3],sixdof[4],sixdof[5],sixdof[6]);
 }
