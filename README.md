@@ -50,3 +50,6 @@ find_package(Boost REQUIRED COMPONENTS timer)
 ```
 rosbag play train.bag --clock --topic /zed/left/image_rect_color/compressed /imu/data /velodyne_points
 ```
+- datasetmaker 노드 실행 후, bag파일 실행시 아래와 같이 자동으로 데이터셋 생성 및 저장
+![image](https://user-images.githubusercontent.com/80799025/187027494-8cea6889-09b0-4bea-9682-303c8c286b31.png)
+
