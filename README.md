@@ -53,3 +53,8 @@ rosbag play train.bag --clock --topic /zed/left/image_rect_color/compressed /imu
 - datasetmaker 노드 실행 후, bag파일 실행시 아래와 같이 자동으로 데이터셋 생성 및 저장
 ![image](https://user-images.githubusercontent.com/80799025/187027494-8cea6889-09b0-4bea-9682-303c8c286b31.png)
 
+# PoseNet
+- 위에서 생성한 데이터셋으로 PoseNet 학습
+- 16batch 100 epoch으로 학습
+![image](https://user-images.githubusercontent.com/80799025/187037027-fe14810e-8583-4093-ae29-c32547d3a1ed.png)
+- 학습량이 부족한지 오차가 많이 발생하였다.
