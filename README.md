@@ -57,4 +57,4 @@ rosbag play train.bag --clock --topic /zed/left/image_rect_color/compressed /imu
 - 위에서 생성한 데이터셋으로 PoseNet 학습
 - 16batch 100 epoch으로 학습
 ![image](https://user-images.githubusercontent.com/80799025/187037027-fe14810e-8583-4093-ae29-c32547d3a1ed.png)
-- 학습량이 부족한지 오차가 많이 발생하였다.
+- test 데이터셋과 train데이터 셋의 시작지점이 달라 오차가 많이 .
