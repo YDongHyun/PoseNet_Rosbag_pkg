@@ -65,3 +65,8 @@ rosbag play train.bag --clock --topic /zed/left/image_rect_color/compressed /imu
 ![image](https://user-images.githubusercontent.com/80799025/187063968-207507c1-49b0-44e0-8f7c-ecb79f88f530.png)
 - 다음과 같은 결과를 얻었다. 좌표를 맞춘 후 다시 test하니 오차가 크게 줄었다.
 - 학습 epoch을 더 늘려 모델을 더 정확하게 만들어 볼 계획이다.
+
+-200 epoch
+
+![image](https://user-images.githubusercontent.com/80799025/187084152-382c5217-db5c-4be1-b7e5-9d2cd19be28f.png)
+
