@@ -60,3 +60,7 @@ rosbag play train.bag --clock --topic /zed/left/image_rect_color/compressed /imu
 ![image](https://user-images.githubusercontent.com/80799025/187037027-fe14810e-8583-4093-ae29-c32547d3a1ed.png)
 
 - test 데이터셋과 train데이터 셋의 시작지점이 달라 기준이 다르게 되어 좌표 오차가 많이 발생하였다. 추후 test데이터셋을 다시 확인해야겠다.
+- test bag을 돌릴 때 train bag파일과 시점을 맞춘 후 다시 돌렸다.
+![image](https://user-images.githubusercontent.com/80799025/187063968-207507c1-49b0-44e0-8f7c-ecb79f88f530.png)
+- 다음과 같은 결과를 얻었다. 좌표를 맞춘 후 다시 test하니 오차가 크게 줄었다.
+- 학습 epoch을 더 늘려 모델을 더 정확하게 만들어 볼 계획이다.
