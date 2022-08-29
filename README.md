@@ -70,3 +70,11 @@ rosbag play train.bag --clock --topic /zed/left/image_rect_color/compressed /imu
 
 ![image](https://user-images.githubusercontent.com/80799025/187084152-382c5217-db5c-4be1-b7e5-9d2cd19be28f.png)
 
+
+# 시각화
+- test.bag파일을 visualization.py로 이미지를 받아, PoseNet을 실행시킨 후 결과를 출력
+- 아래 사진은 estimate값만을 표현, PoseNet을 수행하는데 시간이 오래걸려 중간에 프레임이 끊긴것을 확인할 수 있다.
+
+![image](https://user-images.githubusercontent.com/80799025/187133430-ed6008b6-c0cf-4c38-9e8e-dc45f7fc6ffb.png)
+
+
