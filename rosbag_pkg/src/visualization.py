@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 
 import rospy
-import rosbag
 import tf
 from sensor_msgs.msg import CompressedImage
 from cv_bridge import CvBridge
 from visualization_msgs.msg import Marker
-from std_msgs.msg import ColorRGBA
 from PIL import Image 
 import cv2
 import torch
