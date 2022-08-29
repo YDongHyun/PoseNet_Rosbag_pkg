@@ -19,7 +19,6 @@ def Bag_Sub():
    rospy.spin()
 
 def Sixdof_Pub(CompressedImage):
-   
    global cnt
    cnt+=1
    pub = rospy.Publisher('/sixdof', Marker, queue_size=10)
