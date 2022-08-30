@@ -78,7 +78,11 @@ rosbag play train.bag --clock --topic /zed/left/image_rect_color/compressed /imu
 
 ![image](https://user-images.githubusercontent.com/80799025/187133430-ed6008b6-c0cf-4c38-9e8e-dc45f7fc6ffb.png)
 
-- Ground Truth값과 비교 (파란색 - Ground Truth, 
+- Ground Truth값과 비교 (파란색 - Ground Truth, 초록색 - Estimate)
 
 ![image](https://user-images.githubusercontent.com/80799025/187354704-a8d0b1f5-7ea6-4a1d-9879-1e95fa39ad31.png)
 - 오차들이 육안으로 확인된다. PoseNet 실행속도를 높여 estimate값의 공백을 최소화 해야겠다.
+
+- 코드를 수정하여 다시 시각화를 하였다.
+
+![image](https://user-images.githubusercontent.com/80799025/187409918-2ce53cf9-3aae-4d7b-b550-c639d7effd02.png)
