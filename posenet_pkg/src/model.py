@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 import time
 import copy
@@ -13,7 +14,6 @@ from torchvision import transforms, models, datasets
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 from PIL import Image
-
 
 def model_parser(model, fixed_weight=False, dropout_rate=0.0, bayesian = False):
     base_model = None
@@ -71,12 +71,13 @@ class PoseLoss(nn.Module):
 
 
 class ResNet(nn.Module):
+   
     def __init__(self, base_model, fixed_weight=False, dropout_rate=0.0, bayesian = False):
         super(ResNet, self).__init__()
-
         self.bayesian = bayesian
         self.dropout_rate = dropout_rate
         feat_in = base_model.fc.in_features
+        print(torch.cuda.is_available())
 
         self.base_model = nn.Sequential(*list(base_model.children())[:-1])
         # self.base_model = base_model
@@ -105,8 +106,8 @@ class ResNet(nn.Module):
         #
         # nn.init.normal_(self.fc_rotation.weight, 0, 0.01)
         # nn.init.constant_(self.fc_rotation.bias, 0)
-
-    def forward(self, x):
+        
+    def forward(self, x): 
         x = self.base_model(x)
         x = x.view(x.size(0), -1)
         x_fully = self.fc_last(x)
@@ -118,9 +119,8 @@ class ResNet(nn.Module):
 
         position = self.fc_position(x)
         rotation = self.fc_rotation(x)
-
+        
         return position, rotation, x_fully
-
 
 class ResNetSimple(nn.Module):
     def __init__(self, base_model, fixed_weight=False, dropout_rate=0.0):

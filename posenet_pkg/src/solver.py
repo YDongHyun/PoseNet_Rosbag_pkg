@@ -1,5 +1,4 @@
-import sys
-sys.path.append("/home/ydh/posenet_pkg/posenet_pkg/posenet_pkg")
+#!/usr/bin/env python3
 import os
 import time
 import numpy as np
@@ -17,34 +16,27 @@ from data_loader import get_loader
 class Solver():
     def __init__(self, data_loader):
         self.data_loader = data_loader
-
-        # do not use dropout if not bayesian mode
-        # if not self.config.bayesian:
-        #     self.config.dropout_rate = 0.0
-
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
         self.model = model_parser(model='Resnet', fixed_weight=False, dropout_rate=0.5,
                                   bayesian=False)
 
     def test(self):
         global pos_out
         global ori_out
-
         device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
+        #print(torch.cuda.is_available())
         self.model = self.model.to(self.device)
         self.model.eval()
 
-        test_model_path = '/home/ydh/catkin_ws/src/rosbag_pkg/src/model/199_net.pth'
+        test_model_path = '/home/ydh/catkin_ws/src/posenet_pkg/src/model/199_net.pth'
 
         self.model.load_state_dict(torch.load(test_model_path))
-
+        
         for i, inputs in enumerate(self.data_loader):
             inputs = inputs.to(self.device)
             pos_out, ori_out, _ = self.model(inputs)
             pos_out = pos_out.squeeze(0).detach().cpu().numpy()
             ori_out = F.normalize(ori_out, p=2, dim=1)
             ori_out = quat_to_euler(ori_out.squeeze(0).detach().cpu().numpy())
-            
+
         return pos_out, ori_out
