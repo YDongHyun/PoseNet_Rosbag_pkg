@@ -78,7 +78,7 @@ rosbag play train.bag --clock --topic /zed/left/image_rect_color/compressed /imu
 
 ![image](https://user-images.githubusercontent.com/80799025/187133430-ed6008b6-c0cf-4c38-9e8e-dc45f7fc6ffb.png)
 
-- Ground Truth값과 비교
-
-![image](https://user-images.githubusercontent.com/80799025/187354531-8ad8baf3-ac83-4386-a92e-9f23a4dcc22e.png)
+- Ground Truth값과 비교 (파란색 - Ground Truth, 
+- 
+![image](https://user-images.githubusercontent.com/80799025/187354704-a8d0b1f5-7ea6-4a1d-9879-1e95fa39ad31.png)
 - 오차들이 육안으로 확인된다. PoseNet 
