@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-from os import TMP_MAX
 import rospy
 import rosbag
 import tf
@@ -7,7 +6,6 @@ from sensor_msgs.msg import CompressedImage
 from geometry_msgs.msg import PoseStamped
 from cv_bridge import CvBridge
 from visualization_msgs.msg import Marker
-from std_msgs.msg import ColorRGBA
 from PIL import Image 
 import cv2
 import torch
@@ -50,8 +48,8 @@ def Sixdof_Pub():
          marker.pose.orientation.y=float(quaternion[1])
          marker.pose.orientation.z=float(quaternion[2])
          marker.pose.orientation.w=float(quaternion[3])
+         print(marker)  
          pub.publish(marker)
-         print(marker)
 
 def Truth_Pub():
    cnt_truth=0
