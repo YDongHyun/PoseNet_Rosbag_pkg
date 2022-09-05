@@ -15,7 +15,7 @@ from torch.backends import cudnn
 
 def Sixdof_Pub():
    cnt=0
-   pub = rospy.Publisher('/sixdof', Marker, queue_size=10)
+   pub = rospy.Publisher('/estimate', Marker, queue_size=10)
    image=CompressedImage
    bag = rosbag.Bag("test.bag")
    for topic, img ,t in bag.read_messages(topics=['/zed/left/image_rect_color/compressed']):
